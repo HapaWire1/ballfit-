@@ -105,21 +105,23 @@ export default function Home() {
     const cleanZip = zip.trim().slice(0, 5);
     const coords = ZIP_CENTERS[cleanZip];
 
-    if (!coords) {
-      // Unknown ZIP – show nearest locations overall so coverage still feels useful
+    // If we have a center for this ZIP, filter by distance
+    if (coords) {
+      const [lat, lng] = coords;
       return locations
-        .map((loc) => ({ ...loc, distance: 9999 }))
-        .slice(0, 8);
+        .map((loc) => ({
+          ...loc,
+          distance: distanceMiles(lat, lng, loc.lat, loc.lng),
+        }))
+        .filter((loc) => loc.distance <= radius)
+        .sort((a, b) => a.distance - b.distance);
     }
 
-    const [lat, lng] = coords;
+    // Unknown ZIP – still show all locations sorted by name so the tool never feels empty
+    // (better UX than a dead end while coverage grows)
     return locations
-      .map((loc) => ({
-        ...loc,
-        distance: distanceMiles(lat, lng, loc.lat, loc.lng),
-      }))
-      .filter((loc) => loc.distance <= radius)
-      .sort((a, b) => a.distance - b.distance);
+      .map((loc) => ({ ...loc, distance: 0 }))
+      .slice(0, 12);
   }, [zip, radius, searched]);
 
   const handleSearch = (e: React.FormEvent) => {
