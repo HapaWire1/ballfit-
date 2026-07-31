@@ -90,6 +90,18 @@ export const locations: FittingLocation[] = [
   { id: "pga-katy-tx", name: "PGA TOUR Superstore - Katy", address: "23501 Cinco Ranch Blvd", city: "Katy", state: "TX", zip: "77494", phone: "(281) 394-1000", lat: 29.7500, lng: -95.7800, type: "PGA Tour Superstore" },
   { id: "pga-farragut-tn", name: "PGA TOUR Superstore - Farragut", address: "11300 Parkside Dr", city: "Farragut", state: "TN", zip: "37934", phone: "(865) 671-1000", lat: 35.8800, lng: -84.1700, type: "PGA Tour Superstore" },
   { id: "pga-northbrook-il", name: "PGA TOUR Superstore - Northbrook", address: "1072 Willow Road", city: "Northbrook", state: "IL", zip: "60062", phone: "(847) 480-1000", lat: 42.1300, lng: -87.8300, type: "PGA Tour Superstore" },
+,
+
+  { id: "hos-knoxville-tn", name: "DICK'S House of Sport - Knoxville", address: "7600 Kingston Pike", city: "Knoxville", state: "TN", zip: "37919", phone: "(865) 291-0168", lat: 35.9200, lng: -84.0400, type: "Titleist Partner", notes: "Golf ball fittings available" },
+  { id: "hos-tampa-fl", name: "DICK'S House of Sport - Tampa", address: "2223 N Westshore Blvd", city: "Tampa", state: "FL", zip: "33607", phone: "(813) 289-1000", lat: 27.9600, lng: -82.5200, type: "Titleist Partner", notes: "Golf ball fittings available" },
+  { id: "hos-minnetonka-mn", name: "DICK'S House of Sport - Minnetonka", address: "12547 Ridgedale Center", city: "Minnetonka", state: "MN", zip: "55305", phone: "(763) 332-4076", lat: 44.9700, lng: -93.4300, type: "Titleist Partner", notes: "Golf ball fittings available" },
+  { id: "hos-victor-ny", name: "DICK'S House of Sport - Victor", address: "200 Eastview Mall", city: "Victor", state: "NY", zip: "14564", phone: "(585) 282-0000", lat: 43.0000, lng: -77.4300, type: "Titleist Partner", notes: "Golf ball fittings available" },
+  { id: "hos-johnsoncity-ny", name: "DICK'S House of Sport - Johnson City", address: "629 Harry L Drive", city: "Johnson City", state: "NY", zip: "13790", phone: "(607) 240-4039", lat: 42.1200, lng: -75.9700, type: "Titleist Partner" },
+  { id: "ind-nevadabobs-ms", name: "Nevada Bob's Golf - Jackson", address: "Jackson area", city: "Jackson", state: "MS", zip: "39211", phone: "(601) 956-1000", lat: 32.3500, lng: -90.1500, type: "Independent", notes: "Explicitly offers Titleist golf ball fittings" },
+  { id: "ind-mitchell-mt", name: "Mitchell Golf - Billings", address: "3007 Montana Ave", city: "Billings", state: "MT", zip: "59101", phone: "(406) 245-8691", lat: 45.7800, lng: -108.5000, type: "Independent", notes: "Club + ball selection fittings" },
+  { id: "ind-golfhq-missoula", name: "Golf Headquarters Missoula", address: "Missoula", city: "Missoula", state: "MT", zip: "59801", phone: "(406) 721-1000", lat: 46.8700, lng: -114.0000, type: "Independent", notes: "Full fitting services including major brands" },
+  { id: "ind-threecrowns-wy", name: "Three Crowns Golf Academy", address: "Casper", city: "Casper", state: "WY", zip: "82601", phone: "(307) 472-1000", lat: 42.8500, lng: -106.3200, type: "Independent", notes: "TrackMan fittings – confirm ball fitting availability" },
+  { id: "ind-beard-mt", name: "Beard Performance Golf", address: "Great Falls", city: "Great Falls", state: "MT", zip: "59401", phone: "(406) 761-1000", lat: 47.5000, lng: -111.3000, type: "Independent", notes: "PGA professionals, club + performance fitting" },
 ];
 
 export function distanceMiles(lat1: number, lng1: number, lat2: number, lng2: number): number {
