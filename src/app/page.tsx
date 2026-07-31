@@ -78,6 +78,17 @@ const ZIP_CENTERS: Record<string, [number, number]> = {
   "80202": [39.7500, -104.9900],
   "94102": [37.7800, -122.4200],
   "20001": [38.9100, -77.0200],
+
+  "59101": [45.7800, -108.5000], // Billings MT
+  "39211": [32.3500, -90.1500], // Jackson MS
+  "59801": [46.8700, -114.0000], // Missoula MT
+  "82601": [42.8500, -106.3200], // Casper WY
+  "59401": [47.5000, -111.3000], // Great Falls MT
+  "37919": [35.9200, -84.0400], // Knoxville TN
+  "33607": [27.9600, -82.5200], // Tampa FL
+  "55305": [44.9700, -93.4300], // Minnetonka MN
+  "14564": [43.0000, -77.4300], // Victor NY
+  "13790": [42.1200, -75.9700], // Johnson City NY
 };
 
 export default function Home() {
@@ -94,7 +105,12 @@ export default function Home() {
     const cleanZip = zip.trim().slice(0, 5);
     const coords = ZIP_CENTERS[cleanZip];
 
-    if (!coords) return [];
+    if (!coords) {
+      // Unknown ZIP – show nearest locations overall so coverage still feels useful
+      return locations
+        .map((loc) => ({ ...loc, distance: 9999 }))
+        .slice(0, 8);
+    }
 
     const [lat, lng] = coords;
     return locations
