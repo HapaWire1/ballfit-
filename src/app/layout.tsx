@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "BallFit — Find Golf Ball Fittings Near You",
-  description: "Simple ZIP code search + map for USA golf ball fitting locations. Golf Galaxy, PGA Tour Superstore, Titleist partners and more.",
+  description: "ZIP code search + map for USA golf ball fitting locations. Golf Galaxy, PGA Tour Superstore, Titleist partners and more.",
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
           crossOrigin=""
         />
       </head>
-      <body className="bg-gray-50 text-gray-900 antialiased">
+      <body className="bg-[#f8f9fa] text-[#1a1a1a] antialiased">
         {children}
       </body>
     </html>
